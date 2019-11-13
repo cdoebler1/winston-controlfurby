@@ -17,8 +17,8 @@ class ControlFurby(MycroftSkill):
     @intent_file_handler('furby.sing.intent')
     def handle_furby_sing(self, message):
         self.speak_dialog('furby.sing')
-        subprocess.call(["perl", "~/Hacksby/bin/furby-send.pl", "820"])
-        subprocess.call(["perl", "~/Hacksby/bin/furby-send.pl", "868"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "868"])
 
 
 def create_skill():
