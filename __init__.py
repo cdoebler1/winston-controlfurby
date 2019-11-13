@@ -1,15 +1,24 @@
 from mycroft import MycroftSkill, intent_file_handler
 
 
-class ControlFurby(MycroftSkill):
+class TellFurby(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
 
-    @intent_file_handler('furby.control.intent')
-    def handle_furby_control(self, message):
-        self.speak_dialog('furby.control')
+    @intent_file_handler('furby.tell.intent')
+    def handle_furby_tell(self, message):
+        self.speak_dialog('furby.tell')
+
+
+class DanceFurby(MycroftSkill):
+    def __init__(self):
+        MycroftSkill.__init__(self)
+
+    @intent_file_handler('furby.dance.intent')
+    def handle_furby_dance(self, message):
+        self.speak_dialog('furby.dance')
 
 
 def create_skill():
-    return ControlFurby()
-
+    return TellFurby()
+    return DanceFurby()
