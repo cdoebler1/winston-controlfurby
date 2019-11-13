@@ -1,9 +1,9 @@
 from mycroft import MycroftSkill, intent_file_handler
 
 
-class TellFurby(MycroftSkill):
+class TellFurby(MycroftSkill1):
     def __init__(self):
-        MycroftSkill.__init__(self)
+        MycroftSkill1.__init__(self)
 
     @intent_file_handler('furby.tell.intent')
     def handle_furby_tell(self, message):
