@@ -20,5 +20,5 @@ class DanceFurby(MycroftSkill):
 
 
 def create_skill():
-    return TellFurby()
     return DanceFurby()
+    return TellFurby()
