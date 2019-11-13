@@ -21,7 +21,7 @@ class ControlFurby(MycroftSkill):
         subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "868"])
 
     @intent_file_handler('more.cowbell.intent')
-    def more.cowbell(self, message):
+    def handle_more_cowbell(self, message):
         self.speak_dialog('more.cowbell')
         subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
         subprocess.call(["aplay dftr.wav", shell=True])
