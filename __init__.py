@@ -23,7 +23,7 @@ class ControlFurby(MycroftSkill):
     @intent_file_handler('more.cowbell.intent')
     def handle_more_cowbell(self, message):
         self.speak_dialog('more.cowbell')
-        subprocess.call(["aplay", "-q", "../../music/dftr.wav"])
+        subprocess.call(["aplay", "-q", "/home/pi/mycroft-core/skills/dance-furby-skill/music/dftr.wav"])
 
     def stop(self):
         pass
