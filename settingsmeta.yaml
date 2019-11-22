@@ -1,4 +1,4 @@
-name: Control furby
+name: Control Furby
 skillMetadata:
   sections:
     - name: Options << Name of section
