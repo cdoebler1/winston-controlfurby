@@ -14,16 +14,54 @@ class ControlFurby(MycroftSkill):
     def handle_furby_dance(self, message):
         self.speak_dialog('furby.dance')
 
+    @intent_file_handler('furby.sleep.intent')
+    def handle_furby_sleep(self, message):
+        self.speak_dialog('furby.sleep')
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "862"])
+
+    @intent_file_handler('furby.laugh.intent')
+    def handle_furby_laugh(self, message):
+        self.speak_dialog('furby.laugh')
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "863"])
+
+    @intent_file_handler('furby.burp.intent')
+    def handle_furby_burp(self, message):
+        self.speak_dialog('furby.burp')
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "864"])
+
+    @intent_file_handler('furby.fart.intent')
+    def handle_furby_fart(self, message):
+        self.speak_dialog('furby.fart')
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "865"])
+
+    @intent_file_handler('furby.purr.intent')
+    def handle_furby_purr(self, message):
+        self.speak_dialog('furby.purr')
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "866"])
+
+    @intent_file_handler('furby.sneeze.intent')
+    def handle_furby_sneeze(self, message):
+        self.speak_dialog('furby.sneeze')
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "867"])
+
     @intent_file_handler('furby.sing.intent')
     def handle_furby_sing(self, message):
+        self.speak_dialog('furby.snide_remark')
         self.speak_dialog('furby.sing')
         subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
         subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "868"])
 
-    @intent_file_handler('more.cowbell.intent')
-    def handle_more_cowbell(self, message):
-        self.speak_dialog('more.cowbell')
-        subprocess.call(["aplay", "-q", "/home/pi/mycroft-core/skills/control-furby.cdoebler/music/dftr.wav"])
+    @intent_file_handler('furby.talk.intent')
+    def handle_furby_talk(self, message):
+        self.speak_dialog('furby.talk')
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "869"])
 
     def stop(self):
         pass
