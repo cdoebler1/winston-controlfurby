@@ -1,5 +1,6 @@
 from mycroft import MycroftSkill, intent_file_handler
 import subprocess
+import time
 
 
 class ControlFurby(MycroftSkill):
@@ -59,9 +60,10 @@ class ControlFurby(MycroftSkill):
 
     @intent_file_handler('furby.talk.intent')
     def handle_furby_talk(self, message):
-        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
-        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "869"])
         self.speak_dialog('furby.talk')
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "820"])
+        time.sleep(2)
+        subprocess.call(["perl", "/home/pi/Hacksby/bin/furby-send.pl", "869"])
 
     def stop(self):
         pass
